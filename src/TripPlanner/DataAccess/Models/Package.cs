@@ -8,6 +8,6 @@ namespace TripPlanner.DataAccess.Models
     public class Package
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; 
+        public int CustomerId { get; set; }
     }
 }

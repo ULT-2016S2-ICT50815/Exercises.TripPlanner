@@ -10,6 +10,6 @@ namespace TripPlanner.DataAccess.Models
         public int Id { get; set; }
         public int PackageId { get; set; }
         public int TripId { get; set; }
-        public decimal TripCost { get; set; 
+        public decimal TripCost { get; set; }
     }
 }

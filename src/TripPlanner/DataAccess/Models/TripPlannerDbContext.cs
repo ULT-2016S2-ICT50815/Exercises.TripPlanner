@@ -8,6 +8,6 @@ namespace TripPlanner.DataAccess.Models
 {
     public class TripPlannerDbContext : DbContext
     {
-        public DbSet<Customer> Customers { get; set; 
+        public DbSet<Customer> Customers { get; set; }
     }
 }
