@@ -7,5 +7,11 @@ namespace TripPlanner.DataAccess.Model
 {
     public class Package
     {
+        public int Id { get; set; }
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
+        public List<PackageTrip> PackageTrips { get; set; }
+
+
     }
 }
