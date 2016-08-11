@@ -15,6 +15,7 @@ namespace TripPlanner.DataAccess.Models
         public string Surburb { get; set; }
         public string State { get; set; }
         public string Postcode { get; set; }
+        public Package Packages { get; set; }
 
     }
 }
