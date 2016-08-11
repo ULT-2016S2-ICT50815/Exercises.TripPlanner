@@ -12,7 +12,7 @@ namespace TripPlanner.DataAccess.Model
         public string Origin { get; set; }
         public string Destination { get; set; }
         public List<PackageTrip> PackageTrips { get; set; }
-        public int TransportId { get; set; }
+        public int TransportTypeId { get; set; }
         public TransportType TransportType { get; set; }
 
     }
