@@ -15,6 +15,8 @@ namespace TripPlanner.DataAccess.Models
         public string Origin { get; set; }
         [Required]
         public string Destination { get; set; }
+        public List<PackageTrip> PackageTrips { get; set; }
         //add transportTypeId(foreign key)
+        public TransportType TransportTypeId { get; set; }
     }
 }
