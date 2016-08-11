@@ -31,7 +31,8 @@ namespace TripPlanner.DataAccess.model
         [DataType("char")]
         public string Postcode { get; set; }
 
-        public Package Package { get; set; }
+        public List<Package> Packages { get; set; }
 
     }
 }
+
