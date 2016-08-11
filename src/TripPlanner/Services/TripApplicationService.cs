@@ -24,6 +24,9 @@ namespace TripPlanner.Services
                 TransportTypeId = transportTypeId
             };
 
+            _context.Trips.Add(trip);
+            _context.SaveChanges();
+
             return trip;
         }
 
