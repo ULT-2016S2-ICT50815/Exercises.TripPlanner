@@ -13,5 +13,7 @@ namespace TripPlanner.DataAccess.Models
         public DbSet<PackageTrip> PackageTrips { get; set; }
         public DbSet<TransportType> TransportTypes { get; set; }
         public DbSet<Trip> Trips { get; set; }
+
+       
     }
 }

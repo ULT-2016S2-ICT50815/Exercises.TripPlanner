@@ -11,6 +11,6 @@ namespace TripPlanner.DataAccess.Models
         public int PackageId { get; set; }
         public int TripId { get; set; }
         public double TripCost { get; set; }
-        public Package Packages { get; set; }
+        public Package Package { get; set; }
     }
 }

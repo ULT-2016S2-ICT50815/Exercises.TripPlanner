@@ -43,6 +43,9 @@ namespace TripPlanner.UI
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<TripPlannerDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("TripPlannerConnection")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
