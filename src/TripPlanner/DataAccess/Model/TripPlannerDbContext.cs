@@ -13,5 +13,11 @@ namespace TripPlanner.DataAccess.Model
         public DbSet<PackageTrip> PackageTrips { get; set; }
         public DbSet<TransportType> TransportTypes { get; set; }
         public DbSet<Trip> Trips { get; set; }
+
+        public TripPlannerDbContext(DbContextOptions<TripPlannerDbContext> options)
+                :base(options)
+        {
+
+        }
     }
 }
