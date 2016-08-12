@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace TripPlanner.Model
 {
-    public class Package
+    public class TransportType
     {
         public int Id { get; set; }
-        public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
-        public List<PackageTrip> PackageTrips { get; set; }
+        [Required]
+        public string Name { get; set; }
+        public List<Trip> Trips { get; set; }
 
     }
 }

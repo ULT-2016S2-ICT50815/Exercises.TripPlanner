@@ -9,6 +9,10 @@ namespace TripPlanner.Model
     public class TripPlannerDbContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Package> Packages { get; set; }
+        public DbSet<PackageTrip> PackageTrips { get; set; }
+        public DbSet<Trip> Trips { get; set; }
+        public DbSet<TransportType> TransportTypes { get; set; }
 
         public TripPlannerDbContext(DbContextOptions<TripPlannerDbContext> options) 
             : base(options)

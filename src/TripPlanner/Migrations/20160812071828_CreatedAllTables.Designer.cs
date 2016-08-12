@@ -8,9 +8,10 @@ using TripPlanner.Model;
 namespace TripPlanner.Migrations
 {
     [DbContext(typeof(TripPlannerDbContext))]
-    partial class TripPlannerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160812071828_CreatedAllTables")]
+    partial class CreatedAllTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -59,7 +60,7 @@ namespace TripPlanner.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Packages");
+                    b.ToTable("Package");
                 });
 
             modelBuilder.Entity("TripPlanner.Model.PackageTrip", b =>
@@ -79,7 +80,7 @@ namespace TripPlanner.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("PackageTrips");
+                    b.ToTable("PackageTrip");
                 });
 
             modelBuilder.Entity("TripPlanner.Model.TransportType", b =>
@@ -92,7 +93,7 @@ namespace TripPlanner.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransportTypes");
+                    b.ToTable("TransportType");
                 });
 
             modelBuilder.Entity("TripPlanner.Model.Trip", b =>
@@ -112,7 +113,7 @@ namespace TripPlanner.Migrations
 
                     b.HasIndex("TransportTypeId");
 
-                    b.ToTable("Trips");
+                    b.ToTable("Trip");
                 });
 
             modelBuilder.Entity("TripPlanner.Model.Package", b =>
