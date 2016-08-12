@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-TripPlanner.UI-52c967d7-4190-4529-9407-d9edba5717e6",
 
   "dependencies": {
@@ -42,7 +42,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "TripPlanner": "1.0.0-*"
   },
 
   "tools": {

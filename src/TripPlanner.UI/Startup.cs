@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using TripPlanner.UI.Data;
 using TripPlanner.UI.Models;
 using TripPlanner.UI.Services;
+using TripPlanner.DataAccess.Model;
 
 namespace TripPlanner.UI
 {
@@ -41,7 +42,9 @@ namespace TripPlanner.UI
         {
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")))
+                .AddDbContext<TripPlannerDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("MyAppConnection"))); 
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
