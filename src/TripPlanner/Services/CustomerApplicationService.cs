@@ -35,8 +35,16 @@ namespace TripPlanner.Services
 
         public async Task<Customer> Update(int cusId, RegisterCustomerCommand customer)
         {
+            var customerToUpdate = Context.Customers.FirstOrDefault(c => c.Id == cusId);
+            customerToUpdate.FirstName = customer.FirstName;
+            customerToUpdate.LastName = customer.LastName;
+            customerToUpdate.DateOfBirth = customer.DateOfBirth;
+            customerToUpdate.StreetAddress = customer.StreetAddress;
+            customerToUpdate.Suburb = customer.Suburb;
+            customerToUpdate.State = customer.State;
+            customerToUpdate.PostCode = customer.PostCode;
             await Context.SaveChangesAsync();
-            return new Customer();
+            return customerToUpdate;
         }
     }
 }
