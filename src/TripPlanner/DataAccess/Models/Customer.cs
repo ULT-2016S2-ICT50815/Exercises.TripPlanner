@@ -26,5 +26,6 @@ namespace TripPlanner.DataAccess.Models
         [Required]
         [Column(TypeName = "char(4)")]
         public string Postcode { get; set; }
+        public List<Package> Packages { get; set; }
     }
 }
