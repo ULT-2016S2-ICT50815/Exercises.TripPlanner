@@ -47,12 +47,12 @@ namespace TripPlanner.Tests
                 //don't forget to bring namespace and a ref to services
 
                 var service = new TripApplicationService(context);
-                var newTripInfo = new CreateTripAsync(DateTime tripDate, string Destination, TransportType transportType)
+                var newTripInfo = new CreateTripAsync(DateTime tripDate, string Destination, TransportTypeId transportTypeId)
                 {
                     tripDate = DateTime.Today.AddDays(30),
                     origin = "Sydney",
                     destination = "Melbourne",
-                    transportType = 1
+                    transportTypeId = 1
 
                 };
                 var createdTrip = await service.CreateTripAsync(1, newTripInfo);
@@ -65,5 +65,53 @@ namespace TripPlanner.Tests
             };
 
         }
+
+        [Fact]
+        public async void UpdateCustomerTest()
+        {
+            //Set up fixture
+            var optionsBuilder = new DbContextOptionsBuilder<TripPlannerDbContext>();
+            optionsBuilder.UseInMemoryDatabase();
+            //exercise the SUT
+
+            //Trip to Update 
+            using (var context = new TripPlannerDbContext(optionsBuilder.Options))
+            {
+                var service = new TripApplicationService(context);
+                var tripToUpdate = new UpdateTripAsync(int tripId, DateTime tripDate, string origin, string destination, int transportTypeId)
+                {
+                    var updateTrip = context.Trips.FirstOrDefault(t=> t.Id == tripId);
+                context.Update(updateTrip);
+                await context.SaveChangesAsync();
+
+
+                //TripCreated from Services for comparison, 
+                //don't forget to bring namespace and a ref to services
+                //We Need to set updated values to compare against?
+
+
+                var service = new TripApplicationService(context);
+                var updatedTripInfo = new UpdateTripAsync(int tripId, DateTime tripDate, string origin, string destination, int transportTypeId)
+            {
+                var updateTripInfo = context.Trips.FirstOrDefault(t => t.Id == tripId);
+                context.Update(updatedTripInfo);
+                await context.SaveChangesAsync();
+
+            };
+
+
+
+            var updatedTrip = await service.UpdateTripAsync(1, updatedTripInfo);
+
+            //verify Outcomes
+            Assert.Equal(tripToUpdate.TripDate, updatedTripInfo.TripDate);
+            Assert.Equal(tripToUpdate.Origin, updatedTripInfo.Origin);
+            Assert.Equal(tripToUpdate.Destination, updatedTripInfo.Destination);
+            Assert.Equal(tripToUpdate.TransportType, updatedTripInfo.Destination);
+
+        };
+            
+
+        
     }
 }
