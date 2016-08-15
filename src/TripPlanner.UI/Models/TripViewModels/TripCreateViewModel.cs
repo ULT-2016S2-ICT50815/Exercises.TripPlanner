@@ -17,8 +17,20 @@ namespace TripPlanner.UI.Models.TripViewModels
         public string Destination { get; set; }
         [Required]
         [Display(Name = "Transport Type")]
-        public int TransportTypeId { get; set; }
-        [Required]
-        public List<TransportType> TransportTypes { get; set; }
+        //public int TransportTypeId { get; set; }
+        //[Required]
+        //public List<TransportType> TransportTypes { get; set; }
+
+        //What does this do?
+        private int _transportTypeId { get; set; }
+        public int transportTypeId
+
+        {
+            get { return _transportTypeId; }
+            set
+            {
+                _transportTypeId = value;
+            }
+        }
     }
 }
